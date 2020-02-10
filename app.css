@@ -1,0 +1,194 @@
+/* - - - - - - - - - - - - - - - - - - - - - - - - 
+GENERAL
+- - - - - - - - - - - - - - - - - - - - - - - - */
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 800px;
+    width: 90%;
+
+    margin: 0 auto;
+}
+
+.primary-button {
+    padding: 10px 30px;
+    margin-right: 10px;
+
+    border-radius: 30px;
+    border: 1px solid #333;
+
+    background: #333;
+    color: white;
+
+    font-size: 14px;
+}
+
+.secondary-button {
+    padding: 10px 30px;
+    margin-right: 10px;
+
+    border-radius: 30px;
+    border: 1px solid #777;
+
+    background: #777;
+    color: white;
+
+    font-size: 14px;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - 
+HEADER
+- - - - - - - - - - - - - - - - - - - - - - - - */
+header {
+    height: 80px;
+
+    background: #333;
+}
+
+header nav .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 80px;
+}
+
+.burger, .close{
+    display: none;
+    cursor: pointer;
+}
+
+header .logo {
+    background: url('./assets/logo.svg');
+    height: 30px;
+    width: 30px;
+    background-size: 30px;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0;
+    padding: 0;
+
+    width: 400px;
+}
+
+header li {
+    color: white;
+    list-style: none;
+    margin: 0;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - 
+HERO
+- - - - - - - - - - - - - - - - - - - - - - - - */
+.hero {
+    background: linear-gradient(
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.4)
+        ),
+        url('https://images.unsplash.com/photo-1458668383970-8ddd3927deed?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1047&q=80');
+    background-position: 50% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 70vh;
+
+    padding-top: 10vh;
+}
+
+.hero h1 {
+    font-size: 80px;
+    font-weight: 300;
+
+    margin-bottom: 1px;
+}
+.hero h2 {
+    margin-top: 0;
+}
+
+.hero p {
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - 
+MAIN CONTENT
+- - - - - - - - - - - - - - - - - - - - - - - - */
+.main-content {
+    padding: 80px 0;
+}
+
+.main-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - 
+FOOTER
+- - - - - - - - - - - - - - - - - - - - - - - - */
+footer {
+    height: 300px;
+    background: #333;
+}
+
+@media screen and (max-width: 558px) {
+    nav .wrapper ul {
+        position: fixed;
+        left: 100%;
+        top: 0;
+
+        background-color: #333;
+        color: white;
+
+        height: 100vh;
+        width: 30vw;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: left;
+
+        transition: transform 0.5s ease-in-out;
+    }
+
+    nav .wrapper li {
+        padding: 10px;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    nav .wrapper .close {
+        position: fixed;
+        display: flex;
+        align-self: flex-end;
+
+        z-index: 1;
+    }
+/* A little transition to have the nav bar have a bit more animation when the hamburger menu is clicked */
+    .navigation {
+        transform: translateY(50px);
+    }
+
+}
+
+/* John Paguirigan helped me with this section to make the nav bar slide back and forth */
+    .active {
+    transform: translateX(-100%);
+    }
+
+    .inactive {
+    transform: translateX(100%);
+    }
